@@ -1,0 +1,48 @@
+- The problem with removeVertex() from Edge List implementation:
+  + What if this also happens to Adjacency Matrix implem, I straight up delete the vertex
+    from both vertexList and the matrix? NO, since the matrix shrinks together with vertex list
+  + but how about graph usage? When you delete a vertex, you expect the vertex index is gone, 
+    but basically it is still there, with different value
+  + If you mark the invalid vertex with special value, what would it be when type is T???
+  + How about we don't have removeVertex operation for Edge List :O
+  + How about I erase that vertex and also change the entire edge list according to the erasure
+    since what the edges are linked to are not actually there after we remove vertex at vtxIndex, 
+    we must shift those up an index to match the change in vertexList.
+    When deleting a vertex, actually, the indices of all other vertices are changed. But they are still distinct ones.
+  + I can't delete any edge associated with vtxIndex, since there is vectex that takes vtxIndex.
+    So what edge do we delete? 
+    + First loop: delete any edge hash vertex 7
+    + Second loop: drop any edge's vertex that is > 7, begin at the current found edge.
+    But what would be the time complexity for this approach? probably O(V + E)
+- Write Adjacency Implementation:
+  + Should I use vector or list for storing edges?
+    What do i prioritize? NOthign, so choose vector
+  + Now vector of vectors of what? struct Edge with field: cost and to (already knew what from is)
+  + Write class class Undirected_Adjacency_List_Graph:
+    - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

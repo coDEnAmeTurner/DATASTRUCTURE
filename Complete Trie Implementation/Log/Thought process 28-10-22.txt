@@ -1,0 +1,4 @@
+write trie:
+	- If its end of text and terminal node, do we need to change its termianl to false, while we can just delete it? Yes, since what if its terminal is true for a part of that string
+	  but below the hierachy there's another terminal true.
+	- return at 2 places since there are two cases (or at lease 2) to delete a string.

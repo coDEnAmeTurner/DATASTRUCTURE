@@ -1,0 +1,4 @@
+How to find the smallest edge?
+- Scan the edge.
+- How to know that this smallest edge is already visited?
+How to integrate the undirected edge list back into... adjacency matrix of Undirected_Adjacency_Matrix_Graph?

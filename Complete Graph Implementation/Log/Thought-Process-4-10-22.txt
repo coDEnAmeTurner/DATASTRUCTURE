@@ -1,0 +1,65 @@
+- When create and edge, what do i want to initialize?
+  + Undirected:
+    - first vertex
+    - second vertex
+    - cost
+  + Directed:
+    - start vertex
+    - end vertex
+    - cost
+- What parameters do i need for addVertex()
+  + What to add? Value of some data type... 
+    Is that data type the same as vertex and edge list?
+    Yes, it is, a graph can only store 1 data type.
+  + When adding a vertex, what are the cases?
+    - case in which vertex list vector is empty:
+      + Just add!
+    - case in which vertex list vector is not empty:
+      + Has 1 element:
+        + Add at the end
+      + Has > 1 element:
+        + Add at the end
+- Do i need removeVertex()? Yes
+  + What are the cases?
+    - case in which vertex list vector is empty:
+      + Can't delete
+    - case in which vertex list vector is not empty:
+         - Has 1 vertex: Check if that vertex is the one, if yes then save that vertex index, then delete
+         - Has more than 1: Find the vertex:
+           + Found, save that vertex, then delete
+             - What if there are more than 1 vertices with same value?
+         - What if this vertex is connected to an edge?
+            - Find the edge:
+              + What are the cases when finding edge?
+                - Edge list is empty:
+                  + don't find, vertex is not connected to any edge.
+                - Edge list is not empty:
+                  + edge list has 1 edge:
+                    - Check if that edge connects to the vertex:
+                      + Yes, remove the edge.
+                  + edge list has more than one:
+                    - Actually search for the edge connected to the vertex:
+                      + Yes, remove the edge
+- Do i need to reconsider whether using list? No, since from the start, edge list is designed to use index
+- Should I use do while or while for erasing edge in edge list?
+  Do I need to check if I want to enter first iteration? No, so use do while
+- What if I erase the element to which the vector iterator points?
+  The iterator will be invalidated and we can't do anything to fix
+- Write addEdge() method
+  + Check if first and second parameters exist:
+    (Do we even need to check the below?)
+    - vertexList is empty:
+      + They don't exist
+    - vertexList is not empty:
+        - if first >= 0 && first < vertexList.size() && second >= 0 && second < vertex\List.size())
+          + add edge (first, second)
+            - Check if the edge exists:
+		WHAT DO I WANT? I want to add the edge, meaning the edge must not exist, meaning find_if returns edgeList.end(), 
+                meaning predicate returns false for every edge, meaning condition for predicate is: condition that the returned edge must satisfy
+- Write removeEdge(first, second, cost) method
+  + Check if the edge exists, edge is defined by the 2 vertices and a cost, 
+    so find the edge with these matched values.
+    - If edgeList is not empty:
+      + find edge that matches first, second, cost using find_if
+        - If it doesn't exist, add the edge
+    

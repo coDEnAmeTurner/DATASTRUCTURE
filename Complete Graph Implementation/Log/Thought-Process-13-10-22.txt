@@ -1,0 +1,16 @@
++ How to hash a key to a key index (hash value)? Bidrectional mapping, how to implement
+  this mapping? We need a hash table!
+- what is key? vertex index: a number. vertex index is not the PQ node index.
+  - How large is this hash table? More like: how many keys do you want to store? 
+    It is number of vertices so size: 1.3 times larger than number of vertices.
+  - What hash function is used? division method
+  - What is the meaning of having hashtable when vertex index is already hash value?
+  - How is hash better than vector?
+    + Vector: tap into each entry. each entry is a struct with field: vertex index, distance.
+    + Hash table: tap into 1 entry via hash value calculated by vertex index 
+                  in constant time. Then just make vals array with index as vertex index 
+                  (actually have to use has function for generic value)
+                  + How big is vals? Size of vals is size of hashtable.
+
+                  
+

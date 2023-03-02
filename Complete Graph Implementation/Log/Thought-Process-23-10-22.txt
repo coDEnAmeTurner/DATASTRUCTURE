@@ -1,0 +1,9 @@
+Write Kruskal for Adjacency matrix
+- We have narrowed down that Min cost edge must be > 0, since if it's 0, then its not an edge
+  welp, set the initial min as INTMAX
+- The reason why it seems like the vertices are not compressed while the component number is displayed 1 is that the vertex root at each merge is the one to change, 
+  so vertices in a component might not be compressed entirely, still each vertex leads back to its actual root.
+- but why vector subscript out of range? This is because the vector is not resized as we wanted:
+  + Why doesn't it resize?
+    - since we resize a vector of integers, meaning having to add more integers... but it still autofills the default integer value in incrementMatrix()????
+    - syntax error, because the matrix i want to access is the mst one, not the local one :)))))0

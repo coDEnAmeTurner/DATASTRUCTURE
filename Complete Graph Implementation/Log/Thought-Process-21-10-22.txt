@@ -1,0 +1,3 @@
+How to sort all edges in adjacecny matrix?
+- we dont need to sort, just find the smallest one, one by one, but how?
+  When found one, add to a vector, next time found another one, check if the reverse version is already in the vector.

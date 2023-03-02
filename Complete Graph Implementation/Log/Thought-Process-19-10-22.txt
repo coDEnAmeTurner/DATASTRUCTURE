@@ -1,0 +1,14 @@
+Write Union Find
+- First of all, how to implement array id of vertices?
+  It is to use mapping? Mapping what to what? 
+  - Map vertex index to array index... What if having vertex index as array index
+    which means union find array has the size of vertex list
+  - There's no add vertex operation for union find, there are only unify or find.
+    So the assumption is that the array of vertices is given beforehand.
+    This means at the first place of having a union find ds, we already have 
+    that array of vertices, all initialized as itself.
+- have an array sz of component's size, with each component associated with an index.
+  Ex: sz[5], meaning size of component with root as vertex 5.
+- do i need a field to save the size of 2 arrays? yes
+- stop at writing the connected method to check if 2 vertices in the same component.
+- write componentSize() method

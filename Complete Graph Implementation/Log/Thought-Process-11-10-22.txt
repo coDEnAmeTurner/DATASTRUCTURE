@@ -1,0 +1,2 @@
+Write lazy dijkstra returning both distance to each node and shortest path to each node for EdgeList
++ How do i return dist and prev array? pass shared_pointer to lazyDijkstra

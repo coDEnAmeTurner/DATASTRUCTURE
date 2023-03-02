@@ -1,0 +1,6 @@
+- Write bfsPrint for undirected adjacency matrix:
+  + How do i get the neighbours:
+    - get the neighbours by matrix[front]
+    - now what if the neighbour leads back to the already visited vertex? Then, it skipped.
+    - now that vector subscript fuck + source file is different from the module
+      After cleaning the prev build (lclick project + Clean), and rebuild, things work.

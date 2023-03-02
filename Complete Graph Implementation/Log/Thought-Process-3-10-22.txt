@@ -1,0 +1,5 @@
+Implement a graph using Edge List and Vertex List:
+- Edge List is implemented as an Standard Container:
+  + Vector or List?: We only need to insert at the end of list, so use Vector
+- Vertex List is implemented as a Standard Container:
+  + Vector or List?: We need random access, so use Vector

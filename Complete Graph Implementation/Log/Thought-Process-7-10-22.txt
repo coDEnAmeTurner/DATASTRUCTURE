@@ -1,0 +1,46 @@
+Write void removeVertex(int vtxIndex) (cont):
+- Check if any vtxIndex connects to other vertex?
+  Just delete row 3 from the matrix and column 3 for each other row.
+Rewrite addEdge, since undirected_edge so there're no start and end:
+- Change the method parameters to (int first, int second, int cost):
+- Set matrix[first][second].isEdge = true, .cost = cost
+- Set matrix[second][first].isEdge = true, .cost = cost
+Write removeEdge(int first, int second):
+- Remove in the adjacency matrix:
+  + if vertexlist not empty:
+    - if first and second in the size:
+      Since it is undirected, so we have to remove at 2 places:
+      matrix[first][second] and matrix[second][first]
+
+Write dfsPrint(int at):
+- How do I extract the neighbours?
+  Loop through matrix[at]:
+  + if matrix[at][i].isEdge == true, then matrix[at][i] is the neighbour.
+Write class Directed_Adjacency_Matrix_Graph
+ + Now it is directed, edge 1->2 is not 2->1.
+  - addEdge doesn't take place at 2 cells
+  - removeEdge doesn't take place at 2 cells
+    + There are some wasted code, what if that cell isn't an edge?
+ + Check if dfs got undirected still works for directed? Yes it does.
+
+Edit class Edge_List_Graph:
+ + removeVertex() (both directed and undirected): 
+   - if the edge list not empty, more than 1 edge:
+     find the edge using find_if and delete it. What if there're many edges 
+     with that vtxIndex but find_if only returns 1? 
+     Put find_if in a loop, if there's still edge with vtxIndex, it will be deleted.
+ + fix dfsPrint_rec (both directed and undirected): 
+   It doesn't print the way I want, print it and I will see
+   So index of vertex is not vertex's content???
+   removeVertex makes this difference: It pushed vertices' values forward, 
+                                       made vertex 8 have value 9.
+   How do i fix it? Only erase edges attached to it, since it is stored in a Vector, 
+   there's no way I can delete it, unless the vector size drops equal or below
+   vertex index
+
+
+
+
+
+
+

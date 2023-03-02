@@ -1,0 +1,1 @@
+Each edge in adjacency list in a Directed edge. So no need to check what "at" is.

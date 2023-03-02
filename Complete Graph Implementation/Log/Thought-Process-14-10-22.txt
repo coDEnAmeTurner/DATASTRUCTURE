@@ -1,0 +1,12 @@
+Write indexed_priority_queue class
+  Am I developing indexed priority queue for only graph implementation or general use?
+  Only graph implem
+  + vals, pm, im will be dynamic array with smart pointer, put in private, size of vertex list
+    Each vals index is vertex Index
+  + What method should we start at?
+    Depend on what you use first? 
+      Function only does the job its name tends for
+    - Write contains(int ki)
+    - Write insert(int ki, int value)
+    - Write swim(int im's index)
+    

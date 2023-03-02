@@ -1,0 +1,7 @@
+Write bellford for edgelistgraph:
+- INT_MAX + 5 becomes something a little greater than INT_MIN, which is not our intention...
+- Bellford doesn't detect all nodes caught in negative cycle:
+  Because my code check if the dist[begin] is INT_MIN before checking the dist[begin] + edge.cost < dist[end]
+  So it skips what's supposed to be definitely smaller than dist[end].
+Write bellford for adjacency matrix:
+- vector subscript out of range after traversing the matrix

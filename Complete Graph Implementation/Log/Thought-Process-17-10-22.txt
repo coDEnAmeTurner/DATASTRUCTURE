@@ -1,0 +1,11 @@
+Write lazy dijkstra for directed edge list
+Write lazy dijkstra for undirected adajcency matrix:
+- Relaxing the neighbours:
+  + Undirected edge comes with 2 cells (1, 2) (2, 1). If "at" is 1, then neighbour is 2
+We can improve these classes with inheritance using interface, since there are many 
+similar stuff among them.
+Write eager dijkstra for all graphs
+Write bellford algo for edgelistgraph:
+- For undirected one:
+  + does bellford work on undirected with negative weight graph? Nope
+- fixing bellFord behaviour...

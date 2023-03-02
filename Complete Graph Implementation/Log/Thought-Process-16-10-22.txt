@@ -1,0 +1,2 @@
+Write lazy dijkstra:
+- Writing inner loop

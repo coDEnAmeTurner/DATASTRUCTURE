@@ -1,0 +1,27 @@
+Union Find:
+- Union Find constructor: The size passed in must greater than 0, if it is 0, throw exception
+- find() method:
+  + union find array is always full, there's no way the array is empty.
+- int UnionFind::getComponentSize(int p)
+  This involes 2 ds: sz and id.
+  + We tap in id first with find() method: id is always filled.
+  + sz is, also
+- void UnionFind::unify(int viA, int viB):
+  What data structures are involved?
+  + id array: for find() method to traverse.
+  + sz array: update the size of component that the final root belongs to
+  Cases: 
+  + id and sz are always filled so no need to check size's cases.
+  + if viA and viB in the range of id:
+Kruskal algo for edgelist:
+- no, return a vector, if there's no edge, return an empty vector.
+- Cases:
+  + vertex list is not empty:
+    - has 1 vertex: That graph is the minimum spanning tree. Then how do you return vector of edges? Then there's no edge
+    - more than 1 vertex: 
+      + edge list size > 1:
+        - Do the algo
+- How to make a graph based on mst edge list and original graph's vertex list?
+- vector doesn't provide search for a vertex in O(1). Since you make an edge for 2 vertices, you don't know its index in vector list, you know what it is actually...
+  so search is a big involvement
+- now how do i do kruskal on adjacency matrix?

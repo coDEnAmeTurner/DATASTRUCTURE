@@ -1,0 +1,9 @@
+Write kruskal() for adjacencyList
+- Do we even need adjacencyList[i][j].cost > 0 when finding smallest cost edge?
+  Why if we have an edge with weight 0 from matrix one? No, weight can't be zero, 
+  weight is to judge the cost of something, the cost can't be 0.
+- edge.to is not an index of edge.begin, its another edge.begin...
+Write prim():
+- Why have to translate undirected to 2 directed? Since we need to find the neighbour, if we keep it as undirected, the neighbour can be either end, which is a big fuss
+- But we have edge in edgelist as 1 edge per undirected edge. So the begin or end can be either side.
+- How do I know what edge.to is when the edge is undirected????

@@ -1,0 +1,74 @@
+- Should graph have vertices with same value? There's no correct answer...
+- write dfsPrint(int s) method for undirected edge list graph:
+  + Find s:
+    - Vertex list is empty:
+      + return
+    - Has 1 vertex:
+      + if vertex index == s: print vertex
+    - Has more than 1 vertex:
+      - If s < 0 or s >= vertex list size: return
+      - Other than that, according to DFS psuedo code,
+        we need a list of vertex's neighbour. How are we gonna get that list?
+        + Find all edges connect to that vertex using find_if then add the other vertex in the edge into
+          the list of neighbours.
+          Now how to find all edges, when each function only returns 1 iterator?
+          General idea is: 
+            + Each time an edge is found 
+              - do dfs on the other vertex of that edge 
+              - make begin() of find_if an edge behind current edge
+            + Do these till what? I can imagine
+              begin() goes beyond the scope of edge list or right when find_if fails
+          In a more organized way:
+            while (start of find_if() isn't beyond the scope && find_if is still successful)
+              - do dfs on the other vertex of that edge 
+              - make begin() of find_if an edge behind current edge
+  +Hold on, how comes this implementation also includes backtracking? Yes it does! Backtrack basically the return statement
+- Write Directed_Edge_List_Graph:
+  + Replace UndirectedEdge with DirectedEdge
+  + Rewrite addEdge for Directed Graph:
+    - an edge now has order for there vertices. Since order matters, 1 -> 2 is not 2 -> 1
+  + Rewrite dfsPrint_rec(int s, std::shared_ptr<bool[]> visited)
+    - since 1 -> 2 not 1 <- 2, so it can't be either begin or end equals to s
+
+
+- Write Undirected Adjacency Matrix Graph:
+  + How do I store Edge Cost in Adjacency Matrix? 
+    Make a struct containing boolean value and cost variable, 
+    matrix will be of this struct.
+  + How do I implement hash table into the making of adjacency matrix?
+    - Nope, not yet
+  + Now should I pick vector or list for vertex list?
+    - vertex list needs:
+      + Insertion at the end: Vec and Li
+      + Random erasure: Li
+      + Random access: Vec
+      Does vertex list needs to find something? Yes, finds alot.
+      + Search: equal
+    ==> Pick Vec since I need random access even more than random erasure
+- Write void addVertex(T vtxContent)
+  + vertexList empty:
+    - add new vertex, we don't check for any case, since vertex's content doesn't matter.
+    - how to enlarge adjacency matrix using vectors, according to vertexList size?
+      increment the matrix size by 1
+      void incrementMatrixSize()
+	{
+		adjacencyMatrix.resize(adjacencyMatrix.size() + 1);
+		for (int i = 0; i < adjacencyMatrix.size(); i++)
+		{
+			adjacencyMatrix[i].resize(adjacencyMatrix.size() + 1);
+		}
+	}
+- Write void addEdge(int begin, int end, int cost)
+  + vertexList not empty:
+    - if begin in the size and end in the size:
+      + Check if the edge already exists in Adjacency matrix:
+        Use adjacency matrix: matrix[begin][end] like this
+        - If not, then set the edge.isEdge = true and edge.cost = argument "cost".
+
+- Write void removeVertex(int vtxIndex)
+  + if vertexList not empty
+    - vertexList has 1 vertex
+      + if vtxIndex == 0, erase it
+    - vertexList has more than 1
+      + if vtxIndex in the list size, erase it
+    - Check if any vtxIndex connects to other vertex

@@ -1,0 +1,21 @@
+- The problem is that my custom ipq only provides key as int and value as int, so we can't store node - edge pair (int - edge). Now I want to only store the edge cost
+  How are we gonna know what edge the cost and the node are associated with?
+  I can't achieve that, I guess I should use std::map, with sorting everytime a pair is hashed into the tree.
+  std::map allows hashing for node (key) which helps the search for key. Then why do I even need Indexed Priority Queue at the first place?
+  Priority Queue:  
+	+ Search for highest priority in O(1), since using heaps
+  Indexed Priority Queue:
+        + Search for highest priority in O(1), since using hashing and heaps
+	+ Search for any node in O(1), since using hashing.
+  Map (Ordered Map), doesn't use hashing, doesn't use heaps:
+	+ Search takes O(logn) since using BST
+ 	+ Search for highest priority takes O(logn), since using BST
+- Or edit indexed priority queue so that the value is more generic. How to edit it?
+	+ Use a funtor for any comparison for swimming or sinking
+   		- How does the function compare to swim or sink?
+		  Welp we need a functor, as a custom comparison function
+			- How to use the template functor in a class?
+	+ The value is a struct
+	+ What should poll return? the value
+   	+ Pause at editing decreaseKey()
+        + edit any function using ipq, and node_dist (if node_dist is abused) --> Pause here

@@ -1,0 +1,3 @@
+﻿  main.cpp
+D:\SELF TAUGHT\Data Structure\Complete Trie Implementation\Project\Complete Trie Implementation\Complete Trie Implementation\header\Trie.h(38,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Complete Trie Implementation.vcxproj -> D:\SELF TAUGHT\Data Structure\Complete Trie Implementation\Project\Complete Trie Implementation\x64\Debug\Complete Trie Implementation.exe

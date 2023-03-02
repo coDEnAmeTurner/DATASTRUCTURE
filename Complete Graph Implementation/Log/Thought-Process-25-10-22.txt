@@ -1,0 +1,3 @@
+Write eager prim for edgelistgraph
+- Found out that ipq written for graph should have the same structure as standard pq.
+  

@@ -1,0 +1,51 @@
+Continue writing undirected adjacency list:
+Write addEdge: 
+- Check if the edge already exists:
+  Since it is undirected, so we only check if both adjacencyList[first][second] 
+  and adjacencyList[second][first] exist.
+  if they don't, we add both edges	
+Write removeVertex:
+- Delete the vector at that vtxIndex
+- Delete edges attached to it, where edge.to is vtxIndex:
+  + Edges' ends by 1, but how? 
+    - Any edge with edge.to == vtxIndex is to be deleted
+    - Any edge with edge.to > vtxIndex is to be decremented by 1
+    - Now edge.from is not there in the edge, by deleting vector vtxIndex, we 
+      already droped edge.from > vtxIndex.
+Write removeVertex:
+- Remove edge first->second also remove edge second->first
+Write dfsPrint_rec(int s, visited):
++ After printing, we see why vtxIndex is deleted, but why does it still show up? 
+  vtxIndex is now index of the vertex coming after, so actually, the vertex at vtxIndex is gone.
+Rewrite void incrementMatrixSize():
+  yup, a stupid error: the source file is different from when the module was built arises, 
+  to fix this, rebuild the project.
+Write bfsPrint for EdgeList:
+- find in edgelist with start == queue front.
+- why set visited[it->end] as true right when adding the neighbours, 
+  why not wait until actually finished visiting the neighbour (meaning when the neighbour 
+  edges are relaxed)? No, because there are chances in the same relaxing loop, several edges 
+  are attached to the same vertex and the vertex is only marked visited after it is 
+  finished relaxing, so the vertex is gonna be added many times.
+  Plus, the vertex is guaranteed to be visited if it is added, so why not mark it as visited already?
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
